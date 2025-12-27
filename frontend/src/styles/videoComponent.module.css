@@ -1,9 +1,9 @@
-.meetVideoContainer {
+/* .meetVideoContainer {
     position: relative;
     height: 100vh;
     background: rgb(1, 4, 48);
 }
-
+ 
 .meetUserVideo {
     position: absolute;
     bottom: 10vh;
@@ -12,33 +12,33 @@
     left: 0;
     border-radius: 20px;
 }
-
+ 
 .buttonContainers {
     position: absolute;
     width: 100vw;
     bottom: 0;
     text-align: center;
 }
-
+ 
 .buttonContainers svg {
     font-size: 3rem;
 }
-
+ 
 .conferenceView { 
-
+ 
     display: flex;
     
     padding: 10px;
     gap: 10px;
 }
-
+ 
 .conferenceView  video {
     width: 40vw;
     height: 20vh;
     min-width: 30vw;
     border-radius: 10px;
 }
-
+ 
 .chatRoom {
     position: absolute;
     height: 90vh;
@@ -48,14 +48,190 @@
     width: 30vw;
     padding-inline: 20px;
 }
-
+ 
 .chatContainer {
     position: relative;
     height: 100%;
 }
-
-
+ 
+ 
 .chattingArea {
     position: absolute;
     bottom: 0;
+} */
+ 
+/* ================= ROOT ================= */
+ 
+.root {
+  height: 100vh;
+  background: radial-gradient(circle at top, #1b2345, #0b0f1a);
+  color: white;
+}
+ 
+/* ================= LOBBY ================= */
+ 
+.lobbyContainer {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ 
+.lobbyCard {
+  background: rgba(20, 25, 45, 0.85);
+  padding: 30px;
+  border-radius: 16px;
+  width: 360px;
+  text-align: center;
+  backdrop-filter: blur(15px);
+}
+ 
+.lobbyVideo {
+  width: 100%;
+  border-radius: 12px;
+  margin: 15px 0;
+  background: black;
+}
+ 
+/* ================= MEETING ================= */
+ 
+.meetVideoContainer {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+ 
+/* ===== SINGLE USER VIEW (Speaker view) ===== */
+ 
+.conferenceView {
+  position: absolute;
+  inset: 0;
+}
+ 
+.remoteVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: black;
+}
+ 
+/* ===== MULTI USER VIEW (Gallery view) ===== */
+ 
+.conferenceGrid {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+  padding: 20px;
+}
+ 
+.remoteVideoGrid {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  background: black;
+}
+ 
+/* ===== LOCAL VIDEO (LEFT FLOATING) ===== */
+ 
+.localVideo {
+  position: absolute;
+  left: 20px;
+  bottom: 90px;
+  width: 220px;
+  height: 160px;
+  border-radius: 12px;
+  border: 2px solid #2d8cff;
+  object-fit: cover;
+  background: black;
+  z-index: 5;
+}
+ 
+/* ================= CONTROLS ================= */
+ 
+.controls {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  background: rgba(20, 25, 45, 0.9);
+  padding: 12px 20px;
+  border-radius: 30px;
+  backdrop-filter: blur(15px);
+  z-index: 10;
+}
+ 
+.endCall {
+  background: red !important;
+  color: white !important;
+}
+ 
+/* ================= CHAT ================= */
+ 
+.chatRoom {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 360px; /* ⬅️ wider */
+  height: 100%;
+  background: rgba(20, 25, 45, 0.97);
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+ 
+.chatHeader {
+  padding: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+ 
+/* MESSAGE LIST */
+.chattingDisplay {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+ 
+/* SINGLE MESSAGE */
+.chatMessage {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 12px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+ 
+/* USER NAME */
+.chatSender {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6aa9ff;
+  margin-bottom: 4px;
+  text-transform: capitalize;
+}
+ 
+/* MESSAGE TEXT */
+.chatText {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #eaeaea;
+  word-wrap: break-word;
+}
+ 
+/* INPUT AREA */
+.chattingArea {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
