@@ -354,7 +354,7 @@ export default function Authentication() {
                   }}
                   onClick={handleAuth}
                 >
-                  {formState === 0 ? "Join Meeting" : "Create Account"}
+                  {formState === 0 ? "login" : "Create Account"}
                 </Button>
               </Box>
             </Box>
